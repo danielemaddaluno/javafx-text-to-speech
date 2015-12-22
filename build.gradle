@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'text to speech',
+                'Implementation-Version': 1.0,
+                'Main-Class': 'eu.tjago.speechfxapp.JavaFXApplication',
+                'Class-Path': 'libs/freetts.jar'
+    }
+//    into('/lib') {
+//        from configurations.runtime
+//    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+//    testCompile group: 'junit', name: 'junit', version: '4.+'
+    compile fileTree(dir: 'libs', include: '*.jar')
+//    runtime fileTree(dir: 'libs', include: '*.jar')
+}
+
+task copyLibs(type: Copy) {
+    from buildscript.configurations.classpath
+    into 'libu'
+}
