@@ -54,7 +54,8 @@ In a few words this is what I did:
 Add this to your pom.xml within to your build-plugin:
 
 
-```<plugin>
+```
+<plugin>
     <groupId>com.zenjava</groupId>
     <artifactId>javafx-maven-plugin</artifactId>
     <version>8.8.3</version>
