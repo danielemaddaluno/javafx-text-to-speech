@@ -36,7 +36,6 @@
 			<version>1.0</version>
 		</dependency>
 
-
 		<!-- https://mvnrepository.com/artifact/org.mobicents.external.freetts/cmudict04 -->
 		<dependency>
 			<groupId>org.mobicents.external.freetts</groupId>
@@ -58,7 +57,6 @@
 			<version>1.0</version>
 		</dependency>
 
-
 		<!-- https://mvnrepository.com/artifact/org.mobicents.external.freetts/en_us -->
 		<dependency>
 			<groupId>org.mobicents.external.freetts</groupId>
@@ -73,20 +71,6 @@
 			<version>1.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.mobicents.external.freetts</groupId>
-			<artifactId>freetts-jsapi10</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/libs/freetts-jsapi10.jar</systemPath>
-		</dependency>
-		<dependency>
-			<groupId>org.mobicents.external.freetts</groupId>
-			<artifactId>mbrola</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/libs/mbrola.jar</systemPath>
-		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
