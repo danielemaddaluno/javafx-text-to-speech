@@ -95,6 +95,10 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<!-- IMPORTANT -->
+					<useIncrementalCompilation>false</useIncrementalCompilation>
 					<release>11</release>
 				</configuration>
 			</plugin>
@@ -103,9 +107,10 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>0.0.1</version>
 				<configuration>
-					<mainClass>eu.tjago.speechfxapp.App</mainClass>
+					<mainClass>com.madx.finance_economic_calendar.App</mainClass>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>com.zenjava</groupId>
 				<artifactId>javafx-maven-plugin</artifactId>
