@@ -5,29 +5,24 @@
  */
 package eu.tjago.speechfxapp.controller;
 
-import eu.tjago.speechfxapp.JavaFXApplication;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import eu.tjago.speechfxapp.App;
 import eu.tjago.speechfxapp.util.ResourceSingleton;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 /**
  *
  * @author Tomasz
  */
+@SuppressWarnings({"static-access"})
 public class DocumentController implements Initializable {
     
     @FXML
@@ -36,12 +31,11 @@ public class DocumentController implements Initializable {
     @FXML
     TextArea textArea;
     
-    @Override
+    @FXML
     public void initialize(URL url, ResourceBundle rb) {
         textChangedAction();
         
         textArea.textProperty().addListener(new ChangeListener<String>() {
-            @Override
             public void changed(ObservableValue<? extends String> ov, String t, String t1) {
                 textChangedAction();
             }
@@ -52,15 +46,16 @@ public class DocumentController implements Initializable {
     public void openDialogBox(ActionEvent event) throws Exception {
         System.out.println("clicked Read button.");
         
-        Stage stage = new Stage();
-        Parent root = FXMLLoader.load(
-            JavaFXApplication.class.getResource("/views/FXMLModalDialog.fxml"));
-        stage.setScene(new Scene(root));
-        stage.setTitle("Modal window");
-        stage.initModality(Modality.WINDOW_MODAL);
-        stage.initOwner(
-            ((Node)event.getSource()).getScene().getWindow() );
-        stage.show();
+//        Stage stage = new Stage();
+//        Parent root = FXMLLoader.load(
+//            JavaFXApplication.class.getResource("/views/FXMLModalDialog.fxml"));
+//        stage.setScene(new Scene(root));
+//        stage.setTitle("Modal window");
+//        stage.initModality(Modality.WINDOW_MODAL);
+//        stage.initOwner(
+//            ((Node)event.getSource()).getScene().getWindow() );
+//        stage.show();
+        App.setRoot("secondary");
     }
     
     public void textChangedAction() {

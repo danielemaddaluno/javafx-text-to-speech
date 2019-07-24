@@ -21,9 +21,10 @@ import java.util.ResourceBundle;
  *
  * @author Tomasz
  */
+@SuppressWarnings({"rawtypes", "unchecked", "static-access"})
 public class ModalController implements Initializable {
     
-    @FXML
+	@FXML
     ComboBox comboVoice;
     
     @FXML
@@ -34,7 +35,7 @@ public class ModalController implements Initializable {
     
     private Thread voiceReadingThread;
     
-    @Override
+	@FXML
     public void initialize(URL url, ResourceBundle rb) {
         System.out.println("adding items to Combobox");//Fill voices comboBox
         
@@ -51,7 +52,7 @@ public class ModalController implements Initializable {
         ((Stage)comboVoice.getScene().getWindow()).close();
     }
     
-    @FXML
+	@FXML
     public void actionReadText(ActionEvent event) {
         
         final String selectedVoice = comboVoice.getSelectionModel().getSelectedItem().toString();
